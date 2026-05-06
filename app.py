@@ -1,3 +1,9 @@
+"""
+app.py 
+
+Main application coding page for Campaign Marketing tool
+"""
+
 # from flask library import tools
 from flask import Flask, render_template, request, redirect, url_for, Response
 # used to read and transform CSV file into table
