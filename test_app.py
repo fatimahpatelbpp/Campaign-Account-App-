@@ -65,9 +65,9 @@ def test_upload_wrong_columns_shows_error(client):
 def score(row):
     s = row["engagement"] * 0.5
     if row["pipeline"] == 1:
-        s += 20
-    if row["market_size"] == "Enterprise":
         s += 10
+    if row["market_size"] == "Enterprise":
+        s += 5
     return s
 
 # testing full case logic
