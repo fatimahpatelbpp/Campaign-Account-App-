@@ -1,16 +1,7 @@
 """
 test_app.py
-===========
-Basic test suite for the Campaign Targeting Tool.
-Written using pytest — a simple Python testing framework.
 
-Each test follows the AAA pattern:
-    Arrange — set up data
-    Act     — run the code
-    Assert  — check the result
-
-Reference: pytest documentation — https://docs.pytest.org/en/stable/
-Reference: unittest.mock — https://docs.python.org/3/library/unittest.mock.html
+Main testing page for application
 """
 
 # importing python libraries
