@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Campaign Targeting Tool</title>
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* centres the upload card vertically and horizontally */
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px;
+        }
+
+        /* white container card */
+        .upload-card {
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            width: 100%;
+            max-width: 440px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .upload-card h1 {
+            font-size: 21px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+        }
+
+        /* description text */
+        .page-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        /* file input label */
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: #444;
+            margin-bottom: 6px;
+        }
+
+        /* file input field */
+        input[type="file"] {
+            display: block;
+            width: 100%;
+            font-size: 14px;
+            color: #444;
+            margin-bottom: 24px;
+            padding: 10px 12px;
+            border: 1px solid #dddddd;
+            border-radius: 6px;
+            background: #fafafa;
+            font-family: inherit;
+        }
+
+        /* upload submit button */
+        .upload-btn {
+            width: 100%;
+            background: #1a1a2e;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.15s;
+            font-family: inherit;
+        }
+        /* darkens button on hover to show it is clickable */
+        .upload-btn:hover { background: #646492; }
+
+
+    </style>
+</head>
+<body>
+
+<main>
+    <div class="upload-card">
+
+        <!-- page title and description -->
+        <h1>Campaign Targeting Tool</h1>
+        <p class="page-description">This tool analyses and scores your account data to identify the best candidates for campaign targeting. Accounts are ranked based on engagement level, pipeline status, and market size.</p>
+
+        <!-- required columns -->
+        <p class="page-description" style="margin-bottom: 8px;">Please ensure your CSV file contains the following columns:</p>
+        <p class="page-description">name, industry, market_size, pipeline, engagement</p>
+
+        <!----> displays error message from app.py if upload fails -->
+        {% if error %}
+        <p style="color: red; font-size: 14px; margin-bottom: 16px;">{{ error }}</p>
+        {% endif %}
+
+        <!-- file upload form — sends CSV to /upload route in app.py -->
+        <!-- enctype="multipart/form-data" is required for file uploads -->
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="csv_file">Select CSV file</label>
+            <!-- accept=".csv" filters file picker to CSV files only -->
+            <input type="file" name="csv_file" id="csv_file" accept=".csv" required>
+            <button type="submit" class="upload-btn">Upload &amp; Continue</button>
+        </form>
+
+    </div>
+</main>
+
+</body>
+</html>
