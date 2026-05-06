@@ -1,4 +1,6 @@
-Campaign Targeting Tool App
+**Campaign Targeting Tool App**
+
+Marketing teams within B2B consulting firms often rely on manual processes to identify and prioritise client accounts for marketing campaigns. This tool automates that process by uploading structured account data, applying filters and scoring accounts based on a scoring system for faster campaign creation. 
 
 A web-based application that allows users to upload account data, apply filters and generate scores for recommended accounts in B2B campaign targeting using Python and Flask.
 
