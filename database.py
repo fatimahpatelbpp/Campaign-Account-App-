@@ -1,3 +1,10 @@
+"""
+database.py
+
+Data access layer for application
+Handles all SQLite operations including setup, insert and retrieval
+"""
+
 # python's built-in libraries
 import sqlite3
 import pandas as pd
@@ -13,16 +20,7 @@ def init_db():
     c = conn.cursor()
 
     # creates table if it doesn't exist
-    c.execute("""
-        CREATE TABLE IF NOT EXISTS accounts (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT,
-            industry TEXT,
-            market_size TEXT,
-            pipeline INTEGER,
-            engagement INTEGER
-        )
-    """)
+    c.execute()
 
     # saves changes permanently
     conn.commit()
